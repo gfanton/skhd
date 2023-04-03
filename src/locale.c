@@ -134,6 +134,6 @@ bool initialize_keycode_map(void)
 uint32_t keycode_from_char(char key)
 {
     char lookup_key[] = { key, '\0' };
-    uint32_t keycode = (uint32_t) table_find(&keymap_table, &lookup_key);
+    uint32_t keycode = *(uint32_t*)table_find(&keymap_table, &lookup_key);
     return keycode;
 }
